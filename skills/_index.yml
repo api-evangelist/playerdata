@@ -1,0 +1,12 @@
+generated: '2026-07-20'
+method: generated
+source: graphql/playerdata-schema.graphql
+skills:
+  - file: playerdata-pull-session-metrics.md
+    name: Pull PlayerData session performance metrics
+    api: graphql/playerdata-schema.graphql
+    operations: [club, sessions, session, sessionParticipations, athlete]
+  - file: playerdata-onboard-athletes-and-devices.md
+    name: Onboard PlayerData athletes and assign devices
+    api: graphql/playerdata-schema.graphql
+    operations: [club, addNewPersonToClub, addExistingPersonToClub, addAthleteGroup, assignDevice, assignEdge]

@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: derived
+source: graphql/playerdata-schema.graphql + https://github.com/PlayerData/playerdatapy/blob/main/docs/auth.md
+standards:
+  - id: graphql
+    conforms: true
+    evidence: Public GraphQL schema (query/mutation/subscription) at app.playerdata.co.uk/api/graphql
+  - id: oauth2
+    conforms: true
+    evidence: OAuth 2.0 authorization code (+PKCE) and client credentials grants documented
+  - id: graphql-subscriptions
+    conforms: true
+    evidence: RootSubscription exposes real-time event streams
+  - id: relay-connections
+    conforms: true
+    evidence: Relay-style Connection/Edge/PageInfo cursor pagination in schema
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors returned via GraphQL errors array, not application/problem+json
+  - id: rest
+    conforms: false
+    evidence: API is GraphQL, not REST/OpenAPI

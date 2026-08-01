@@ -1,7 +1,14 @@
 aid: playerdata
 name: PlayerData
-description: PlayerData is a company surfaced as a portfolio company of techstars and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  PlayerData provides GPS sports performance tracking technology for athletes and
+  teams — FIFA Quality Certified EDGE wearable trackers, a GPS-enabled Connected
+  Ball, and indoor IMU / local-positioning systems. Its platform captures distance,
+  speed, sprints, acceleration/deceleration and workload, and exposes a GraphQL API
+  secured with OAuth 2.0 covering clubs, athletes, sessions, devices, metrics and
+  reports, plus real-time GraphQL subscription events. Official Python (playerdatapy)
+  and R (playerdatar) client libraries wrap the API. PlayerData is a Techstars
+  portfolio company.
 url: https://raw.githubusercontent.com/api-evangelist/playerdata/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,17 +16,93 @@ x-backed-by:
 - techstars
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1
 tags:
 - Company
-apis: []
+- Sports
+- Sports Performance
+- GPS Tracking
+- Wearables
+- Athlete Monitoring
+- GraphQL
+- Analytics
+image: https://www.playerdata.com/favicon.ico
+apis:
+- name: PlayerData GraphQL API
+  description: >-
+    OAuth2-secured GraphQL API for PlayerData sports performance data — clubs,
+    athletes, sessions, devices, metrics, reports and real-time subscription events.
+  humanURL: https://github.com/PlayerData/playerdatapy
+  baseURL: https://app.playerdata.co.uk/api/graphql
+  properties:
+  - type: GraphQL
+    url: graphql/playerdata-schema.graphql
+  - type: Authentication
+    url: authentication/playerdata-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/playerdata-domain-security.yml
 - type: Website
-  url: https://playerdata.co.uk/
+  url: https://www.playerdata.com/
+- type: Authentication
+  url: authentication/playerdata-authentication.yml
+- type: Packages
+  url: packages/playerdata-packages.yml
+- type: SDKs
+  url: packages/playerdata-packages.yml
+- type: Conventions
+  url: conventions/playerdata-conventions.yml
+- type: DataModel
+  url: data-model/playerdata-data-model.yml
+- type: AsyncAPI
+  url: asyncapi/playerdata-events-asyncapi.yml
+- type: MCPServer
+  url: mcp/playerdata-mcp.yml
+- type: LLMsTxt
+  url: llms/playerdata-llms.txt
+- type: Conformance
+  url: conformance/playerdata-conformance.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: WellKnown
+  url: well-known/playerdata-well-known.yml
+- type: Documentation
+  url: https://github.com/PlayerData/playerdatapy/blob/main/docs/auth.md
+- type: APIReference
+  url: graphql/playerdata-schema.graphql
+- type: GitHubOrganization
+  url: https://github.com/PlayerData
+- type: Support
+  url: https://support.playerdata.com/knowledge
+- type: Blog
+  url: https://www.playerdata.com/blog
+- type: TrustCenter
+  url: https://trust.playerdata.com/
+- type: Login
+  url: https://app.playerdata.co.uk/
+- type: PrivacyPolicy
+  url: https://www.playerdata.com/en-gb/privacy-policy-iframe

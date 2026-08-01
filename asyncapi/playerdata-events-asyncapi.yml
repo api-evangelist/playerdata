@@ -1,0 +1,85 @@
+generated: '2026-07-20'
+method: derived
+source: graphql/playerdata-schema.graphql#RootSubscription
+spec_type: AsyncAPI
+asyncapi: 3.0.0
+info:
+  title: PlayerData Real-Time Events (GraphQL Subscriptions)
+  version: 1.0.0
+  description: >-
+    Server-emitted real-time events exposed by the PlayerData GraphQL API via
+    RootSubscription. Derived from the published GraphQL schema; each channel maps
+    to a GraphQL subscription field delivered over the same OAuth2-secured GraphQL
+    endpoint. This is a faithful representation of a real event surface, not a
+    separately published AsyncAPI document.
+servers:
+  graphql:
+    host: app.playerdata.co.uk
+    pathname: /api/graphql
+    protocol: graphql-ws
+    description: PlayerData GraphQL subscriptions endpoint (OAuth2 bearer).
+channels:
+  athletePeriodMetricsUpdatedEvent:
+    address: athletePeriodMetricsUpdatedEvent
+    description: Emitted when an athlete's period metrics are updated.
+  athleteSegmentMetricsUpdatedEvent:
+    address: athleteSegmentMetricsUpdatedEvent
+    description: Emitted when an athlete's segment metrics are updated.
+  athleteSessionMetricsUpdatedEvent:
+    address: athleteSessionMetricsUpdatedEvent
+    description: Emitted when an athlete's session metrics are updated.
+  periodMetricsUpdatedEvent:
+    address: periodMetricsUpdatedEvent
+    description: Emitted when period metrics are updated.
+  segmentMetricsUpdatedEvent:
+    address: segmentMetricsUpdatedEvent
+    description: Emitted when segment metrics are updated.
+  sessionMetricsUpdatedEvent:
+    address: sessionMetricsUpdatedEvent
+    description: Emitted when session metrics are updated.
+  sessionQuickActionsEvent:
+    address: sessionQuickActionsEvent
+    description: Emitted for session quick-action updates.
+  matchEventCreatedEvent:
+    address: matchEventCreatedEvent
+    description: Emitted when a match event is created.
+  pitchDetectedEvent:
+    address: pitchDetectedEvent
+    description: Emitted when a pitch is detected.
+  datasetUpdatedEvent:
+    address: datasetUpdatedEvent
+    description: Emitted when a dataset is updated.
+  flexibleReportUpdatedEvent:
+    address: flexibleReportUpdatedEvent
+    description: Emitted when a flexible report is updated.
+  bulkActionEvent:
+    address: bulkActionEvent
+    description: Emitted for progress on a bulk action.
+  bulkAthleteImportEvent:
+    address: bulkAthleteImportEvent
+    description: Emitted for progress on a bulk athlete import.
+  bulkStaffImportEvent:
+    address: bulkStaffImportEvent
+    description: Emitted for progress on a bulk staff import.
+  trainingPlanImportEvent:
+    address: trainingPlanImportEvent
+    description: Emitted for progress on a training plan import.
+  pendingMemberCreatedEvent:
+    address: pendingMemberCreatedEvent
+    description: Emitted when a pending member is created.
+  setupChecklistUpdatedEvent:
+    address: setupChecklistUpdatedEvent
+    description: Emitted when the setup checklist is updated.
+operations:
+  onAthleteSessionMetricsUpdated:
+    action: receive
+    channel:
+      $ref: '#/channels/athleteSessionMetricsUpdatedEvent'
+  onSessionMetricsUpdated:
+    action: receive
+    channel:
+      $ref: '#/channels/sessionMetricsUpdatedEvent'
+  onMatchEventCreated:
+    action: receive
+    channel:
+      $ref: '#/channels/matchEventCreatedEvent'

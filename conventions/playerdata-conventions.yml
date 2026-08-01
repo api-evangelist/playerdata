@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/PlayerData/playerdatapy
+api_style: graphql
+endpoint: https://app.playerdata.co.uk/api/graphql
+transport: HTTPS POST (application/json GraphQL requests)
+authentication:
+  style: oauth2-bearer
+  header: 'Authorization: Bearer <access_token>'
+  ref: authentication/playerdata-authentication.yml
+pagination:
+  style: cursor
+  pattern: relay-connections
+  response_fields: [edges, node, pageInfo, endCursor, hasNextPage]
+  notes: >-
+    List fields use Relay-style GraphQL Connections (Connection/Edge/PageInfo
+    types present in the schema); page forward with the endCursor from pageInfo.
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency-key contract is documented; writes are GraphQL mutations.
+versioning:
+  scheme: continuous
+  notes: >-
+    Single evolving GraphQL schema (no URI/date version); the SDK regenerates its
+    typed client from the live schema via ariadne-codegen.
+real_time:
+  style: graphql-subscriptions
+  ref: asyncapi/playerdata-events-asyncapi.yml
+  notes: RootSubscription exposes ~20 server-emitted events (metric/session/import updates).
+errors:
+  style: graphql-errors
+  notes: >-
+    Errors are returned in the GraphQL top-level "errors" array (not RFC 9457
+    problem+json); partial data may accompany errors.
+tokens:
+  access_token_ttl_seconds: 7200

@@ -1,0 +1,24 @@
+# PlayerData
+
+> PlayerData provides GPS sports performance tracking technology — FIFA Quality Certified EDGE wearable trackers, a Connected Ball, and indoor IMU/LPS systems — for athletes and teams. Its platform exposes a GraphQL API (OAuth 2.0) for clubs, athletes, sessions, devices, metrics, and reports, with official Python and R client libraries.
+
+## API
+- [PlayerData GraphQL API](https://app.playerdata.co.uk/api/graphql): OAuth2-secured GraphQL endpoint (queries, mutations, and real-time subscriptions).
+- [GraphQL Schema](https://raw.githubusercontent.com/api-evangelist/playerdata/refs/heads/main/graphql/playerdata-schema.graphql): full published schema (60 queries, 151 mutations, ~17 subscription events).
+
+## Authentication
+- [Authentication guide](https://github.com/PlayerData/playerdatapy/blob/main/docs/auth.md): OAuth 2.0 authorization-code (+PKCE) and client-credentials grants; 2-hour access tokens; club-staff / org-level authorization.
+
+## SDKs
+- [playerdatapy (Python)](https://pypi.org/project/playerdatapy/): `pip install playerdatapy` — official Python client for the PlayerData GraphQL API.
+- [playerdatar (R)](https://github.com/PlayerData/playerdatar): official R wrapper for the PlayerData GraphQL API.
+
+## Docs & Support
+- [Developer / SDK docs](https://github.com/PlayerData): PlayerData GitHub organisation (SDKs and examples).
+- [Support / Knowledge base](https://support.playerdata.com/knowledge)
+- [Trust Center](https://trust.playerdata.com/)
+- [Blog](https://www.playerdata.com/blog)
+
+## Company
+- [Website](https://www.playerdata.com/)
+- [Login](https://app.playerdata.co.uk/)

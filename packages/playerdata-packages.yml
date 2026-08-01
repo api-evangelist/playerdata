@@ -1,0 +1,21 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/PlayerData
+packages:
+  - language: python
+    registry: pypi
+    name: playerdatapy
+    url: https://pypi.org/project/playerdatapy/
+    repo: https://github.com/PlayerData/playerdatapy
+    install: pip install playerdatapy
+    version: 1.18.2
+    summary: Python client for the PlayerData GraphQL API (Pydantic models + direct GraphQL client, OAuth2)
+    official: true
+  - language: r
+    registry: github
+    name: playerdatar
+    url: https://github.com/PlayerData/playerdatar
+    repo: https://github.com/PlayerData/playerdatar
+    install: devtools::install_github("PlayerData/playerdatar", subdir = "playerdatar")
+    summary: Simple R wrapper for the PlayerData GraphQL API with OAuth2 (built on ghql)
+    official: true

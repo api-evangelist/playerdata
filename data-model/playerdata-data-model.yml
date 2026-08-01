@@ -1,0 +1,93 @@
+generated: '2026-07-20'
+method: derived
+source: graphql/playerdata-schema.graphql
+notes: >-
+  Entity graph derived from the PlayerData GraphQL schema top-level Query/Mutation
+  fields and their object types. PlayerData models sports performance tracking:
+  clubs and organisations own athletes and staff, athletes participate in sessions
+  captured by wearable devices/edges, producing metrics, segments and reports.
+entities:
+  - name: Organisation
+    query: organisations
+    notes: Top-level tenant; grants org-level access to service accounts.
+  - name: Club
+    query: club
+    notes: Team/club owning athletes, staff, sessions and pitches.
+  - name: Person
+    query: [person, currentPerson]
+    notes: A human account (staff or athlete-linked); club membership governs access.
+  - name: Athlete
+    query: athlete
+    mutations: [addNewPersonToClub, addExistingPersonToClub, addAthleteGroup]
+    notes: Tracked player; carries accel/decel/speed zones and heart-rate bounds.
+  - name: AthleteGroup
+    query: athleteGroup
+    mutations: [addAthleteGroup, destroyAthleteGroup]
+  - name: Session
+    query: [session, sessions, matchSession, trainingSession]
+    mutations: [createSession, createPredictedSession, destroySession, createSessionSegment]
+    notes: Training or match session; the central performance-data container.
+  - name: SessionParticipation
+    query: [sessionParticipations, matchSessionParticipation, trainingSessionParticipation]
+  - name: Segment
+    query: [segment, segmentParticipations]
+  - name: Device
+    query: [device, devices]
+    mutations: [assignDevice, createDeviceSync, createDevicePage]
+    notes: Wearable GPS/EDGE tracker hardware.
+  - name: Edge
+    query: [edge, edges]
+    mutations: [assignEdge, assignDefaultEdges, createEdgeName]
+    notes: EDGE tracker unit assigned to athletes.
+  - name: Report
+    query: [report, flexibleReport, singleSessionReport, participantDataExport]
+  - name: Dataset
+    query: [datasets, availableDatasetTemplates]
+  - name: Survey
+    query: [survey, surveyAssignment, surveyDistribution]
+    mutations: [addSurveyAnswer, archiveSurvey]
+  - name: Pitch
+    query: pitch
+    mutations: archivePitch
+  - name: TargetTemplate
+    query: targetTemplate
+    mutations: [createTargetTemplate, applyTargetTemplate, deleteTargetTemplates]
+  - name: VideoRecording
+    query: [videoRecording, videoRecordingDownloadUrl, videoRecordingSignedUrl]
+relationships:
+  - from: Organisation
+    to: Club
+    kind: has_many
+  - from: Club
+    to: Athlete
+    kind: has_many
+  - from: Club
+    to: Person
+    kind: has_many
+    via: staff-membership
+  - from: Athlete
+    to: AthleteGroup
+    kind: belongs_to
+  - from: Club
+    to: Session
+    kind: has_many
+  - from: Session
+    to: SessionParticipation
+    kind: has_many
+  - from: Session
+    to: Segment
+    kind: has_many
+  - from: Athlete
+    to: SessionParticipation
+    kind: has_many
+  - from: SessionParticipation
+    to: Device
+    kind: belongs_to
+    via: assignedDevice
+  - from: Athlete
+    to: Edge
+    kind: has_one
+    via: assignEdge
+  - from: Session
+    to: Report
+    kind: has_many

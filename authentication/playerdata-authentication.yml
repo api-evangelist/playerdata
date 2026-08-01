@@ -1,0 +1,45 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/PlayerData/playerdatapy/blob/main/docs/auth.md
+docs: https://github.com/PlayerData/playerdatapy/blob/main/docs/auth.md
+summary:
+  types: [oauth2]
+  oauth2_flows: [authorizationCode, authorizationCodePKCE, clientCredentials]
+  token_type: Bearer
+  access_token_ttl_seconds: 7200
+  refresh_tokens: true    # authorization code grant only; client credentials re-runs the flow
+notes: >-
+  The PlayerData API is a GraphQL API secured with OAuth 2.0. Authorisation Code
+  Grant provides user-based access (read + write) mirroring what the user sees in
+  the PlayerData app, with data access governed by club-staff membership. Client
+  Credentials Grant provides server-to-server, organisation-level access for
+  service accounts granted org access. There is no documented OAuth scope surface;
+  authorization is governed by club-staff membership and org-level grants rather
+  than scopes. Credentials are issued on request via support@playerdata.com.
+schemes:
+  - name: OAuth2AuthorizationCode
+    type: oauth2
+    flow: authorizationCode
+    authorizationUrl: https://app.playerdata.co.uk/oauth/authorize
+    tokenUrl: https://app.playerdata.co.uk/oauth/token
+    use_case: Confidential clients with a secret (user-based access)
+    sources: [https://github.com/PlayerData/playerdatapy/blob/main/docs/auth.md]
+  - name: OAuth2AuthorizationCodePKCE
+    type: oauth2
+    flow: authorizationCode
+    pkce: true
+    authorizationUrl: https://app.playerdata.co.uk/oauth/authorize
+    tokenUrl: https://app.playerdata.co.uk/oauth/token
+    use_case: Public clients with no secret (user-based access)
+    sources: [https://github.com/PlayerData/playerdatapy/blob/main/docs/auth.md]
+  - name: OAuth2ClientCredentials
+    type: oauth2
+    flow: clientCredentials
+    tokenUrl: https://app.playerdata.co.uk/oauth/token
+    use_case: Backend-to-backend, organisation-level access
+    sources: [https://github.com/PlayerData/playerdatapy/blob/main/docs/auth.md]
+endpoints:
+  graphql: https://app.playerdata.co.uk/api/graphql
+  authorize: https://app.playerdata.co.uk/oauth/authorize
+  token: https://app.playerdata.co.uk/oauth/token
+  sign_out: https://app.playerdata.co.uk/api/auth/identities/sign_out
