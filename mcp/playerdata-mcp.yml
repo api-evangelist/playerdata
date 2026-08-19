@@ -2,39 +2,44 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: graphql/playerdata-schema.graphql
-notes: >-
-  No official PlayerData MCP server was found. This is a candidate tool list
-  derived from marquee GraphQL Query/Mutation operations; a real MCP server would
-  wrap the OAuth2-secured GraphQL endpoint at https://app.playerdata.co.uk/api/graphql.
+notes: No official PlayerData MCP server was found. This is a candidate tool list derived from marquee
+  GraphQL Query/Mutation operations; a real MCP server would wrap the OAuth2-secured GraphQL endpoint
+  at https://app.playerdata.co.uk/api/graphql.
 server:
   name: playerdata
   transport: http
   endpoint: https://app.playerdata.co.uk/api/graphql
 tools:
-  - name: list_sessions
-    description: List training and match sessions for a club.
-    source_operation: graphql/playerdata-schema.graphql#Query.sessions
-  - name: get_session
-    description: Fetch a single session and its details.
-    source_operation: graphql/playerdata-schema.graphql#Query.session
-  - name: get_athlete
-    description: Fetch an athlete profile and configuration.
-    source_operation: graphql/playerdata-schema.graphql#Query.athlete
-  - name: get_club
-    description: Fetch a club and its membership.
-    source_operation: graphql/playerdata-schema.graphql#Query.club
-  - name: list_devices
-    description: List wearable tracking devices.
-    source_operation: graphql/playerdata-schema.graphql#Query.devices
-  - name: get_session_metrics
-    description: Read performance metrics for a session participation.
-    source_operation: graphql/playerdata-schema.graphql#Query.sessionParticipations
-  - name: create_session
-    description: Create a new training or match session.
-    source_operation: graphql/playerdata-schema.graphql#Mutation.createSession
-  - name: add_athlete_to_club
-    description: Add a new person as an athlete to a club.
-    source_operation: graphql/playerdata-schema.graphql#Mutation.addNewPersonToClub
-  - name: assign_device
-    description: Assign a tracking device to an athlete.
-    source_operation: graphql/playerdata-schema.graphql#Mutation.assignDevice
+- name: list_sessions
+  description: List training and match sessions for a club.
+  source_operation: graphql/playerdata-schema.graphql#Query.sessions
+- name: get_session
+  description: Fetch a single session and its details.
+  source_operation: graphql/playerdata-schema.graphql#Query.session
+- name: get_athlete
+  description: Fetch an athlete profile and configuration.
+  source_operation: graphql/playerdata-schema.graphql#Query.athlete
+- name: get_club
+  description: Fetch a club and its membership.
+  source_operation: graphql/playerdata-schema.graphql#Query.club
+- name: list_devices
+  description: List wearable tracking devices.
+  source_operation: graphql/playerdata-schema.graphql#Query.devices
+- name: get_session_metrics
+  description: Read performance metrics for a session participation.
+  source_operation: graphql/playerdata-schema.graphql#Query.sessionParticipations
+- name: create_session
+  description: Create a new training or match session.
+  source_operation: graphql/playerdata-schema.graphql#Mutation.createSession
+- name: add_athlete_to_club
+  description: Add a new person as an athlete to a club.
+  source_operation: graphql/playerdata-schema.graphql#Mutation.addNewPersonToClub
+- name: assign_device
+  description: Assign a tracking device to an athlete.
+  source_operation: graphql/playerdata-schema.graphql#Mutation.assignDevice
+deployment:
+  mode: none
+  verified: derived
+  tools: 9
+  checked: '2026-08-12'
+  source: catalog MCP census
