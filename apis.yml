@@ -56,6 +56,7 @@ tags:
 - Athlete Monitoring
 - GraphQL
 - Analytics
+- Real-Time
 image: https://www.playerdata.com/favicon.ico
 apis:
 - name: PlayerData GraphQL API
