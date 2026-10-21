@@ -1,0 +1,75 @@
+edges:
+- partner_name: FIFA Quality Programme
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://inside.fifa.com/innovation/standards/epts
+  category: FIFA Quality Programme certification (football technology and equipment)
+  contract_reference:
+    register: 'FIFA Quality Programme resource hub (inside.fifa.com/innovation/standards: certified products + licensed
+      providers, the page''s own /api/resource-hub endpoints)'
+    standard: FIFA Quality Programme
+    spec_file: null
+    role: fifa-certified-provider
+    registered_name: PlayerData Ltd
+    register_country: Scotland
+    matched_domain: playerdata.com
+    matched_by: domain
+    licences:
+    - programme: Electronic Performance and Tracking Systems (EPTS)
+      licence_type: Preferred
+    signal_note: certified_products = one entry per FIFA product type (tested by an accredited institute against
+      a FIFA test manual), never per product or ball model; quality levels, test manuals and authorisation numbers
+      are context, never counted
+    detected_by: sweep-football-sports-data-fifa.py
+    detected: '2026-10-21'
+    certified_products:
+    - product: EPTS wearable system
+      product_type: EPTS wearable system
+      programme: Electronic Performance and Tracking Systems (EPTS)
+      lapsed: false
+      certified_until: '2030-09-28'
+      quality_levels:
+      - FIFA Basic
+      - FIFA Quality
+      - FIFA Quality PRO
+      test_manuals:
+      - TM EPTS Impact test | 2018
+      - TM EPTS Impact test | 2023
+      - TM EPTS Performance | 2019
+      - TM EPTS Performance | 2025
+      test_institutes:
+      - Sports Labs Ltd.
+      - Victoria University
+      authorisation_numbers:
+      - '1017837'
+      - '1017838'
+      - '1020936'
+      - '1020937'
+      - '1020958'
+  detected_by: sweep-football-sports-data-fifa.py
+  first_seen: '2026-10-21'
+  partner_tier: FIFA Preferred Provider
+generated: '2026-10-21'
+method: searched
+source:
+- https://inside.fifa.com/innovation/standards/epts
+- https://inside.fifa.com/innovation/standards/footballs
+- https://inside.fifa.com/innovation/standards/football-turf
+- https://inside.fifa.com/innovation/standards/video-assistant-referee
+- https://inside.fifa.com/innovation/standards/goal-line-technology
+- https://inside.fifa.com/innovation/standards/virtual-offside-lines
+- https://sportradar.com/partners/
+- https://imgarena.com/partners/
+checked:
+- https://imgarena.com/partners/
+- https://inside.fifa.com/innovation/standards/epts
+- https://inside.fifa.com/innovation/standards/football-turf
+- https://inside.fifa.com/innovation/standards/footballs
+- https://inside.fifa.com/innovation/standards/goal-line-technology
+- https://inside.fifa.com/innovation/standards/video-assistant-referee
+- https://inside.fifa.com/innovation/standards/virtual-offside-lines
+- https://sportradar.com/partners/
