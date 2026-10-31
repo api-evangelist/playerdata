@@ -64,6 +64,124 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-PlayerData is a company surfaced as a portfolio company of techstars and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+PlayerData provides GPS sports performance tracking technology for athletes and teams — FIFA Quality Certified EDGE wearable trackers, a GPS-enabled Connected Ball, and indoor IMU / local-positioning systems. Its platform captures distance, speed, sprints, acceleration/deceleration and workload, and exposes a GraphQL API secured with OAuth 2.0 covering clubs, athletes, sessions, devices, metrics and reports, plus real-time GraphQL subscription events. Official Python (playerdatapy) and R (playerdatar) client libraries wrap the API. PlayerData is a Techstars portfolio company.
 
-Backed by: techstars — https://playerdata.co.uk/
+**Areas:** Company · Sports · Sports Performance · GPS Tracking · Wearables · Athlete Monitoring · GraphQL · Analytics · Real-Time
+
+## PlayerData on APIs.io
+
+Everything profiled for PlayerData is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/playerdata/](https://apis.io/providers/playerdata/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [PlayerData GraphQL API](https://apis.io/apis/playerdata/playerdata-graphql-api/) — OAuth2-secured GraphQL API for PlayerData sports performance data — clubs, athletes, sessions, devices, metrics, reports and real-time subscription events.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [PlayerData Real-Time Events (GraphQL Subscriptions)](https://apis.io/asyncapis/playerdata/playerdata-events-asyncapi/)
+
+#### Event channels (17)
+
+Individual events and webhooks the provider emits.
+
+- [athletePeriodMetricsUpdatedEvent](https://apis.io/channels/playerdata/athleteperiodmetricsupdatedevent/)
+- [athleteSegmentMetricsUpdatedEvent](https://apis.io/channels/playerdata/athletesegmentmetricsupdatedevent/)
+- [athleteSessionMetricsUpdatedEvent](https://apis.io/channels/playerdata/athletesessionmetricsupdatedevent/)
+- [bulkActionEvent](https://apis.io/channels/playerdata/bulkactionevent/)
+- [bulkAthleteImportEvent](https://apis.io/channels/playerdata/bulkathleteimportevent/)
+- [bulkStaffImportEvent](https://apis.io/channels/playerdata/bulkstaffimportevent/)
+- [datasetUpdatedEvent](https://apis.io/channels/playerdata/datasetupdatedevent/)
+- [flexibleReportUpdatedEvent](https://apis.io/channels/playerdata/flexiblereportupdatedevent/)
+- [matchEventCreatedEvent](https://apis.io/channels/playerdata/matcheventcreatedevent/)
+- [pendingMemberCreatedEvent](https://apis.io/channels/playerdata/pendingmembercreatedevent/)
+- [periodMetricsUpdatedEvent](https://apis.io/channels/playerdata/periodmetricsupdatedevent/)
+- [pitchDetectedEvent](https://apis.io/channels/playerdata/pitchdetectedevent/)
+- [segmentMetricsUpdatedEvent](https://apis.io/channels/playerdata/segmentmetricsupdatedevent/)
+- [sessionMetricsUpdatedEvent](https://apis.io/channels/playerdata/sessionmetricsupdatedevent/)
+- [sessionQuickActionsEvent](https://apis.io/channels/playerdata/sessionquickactionsevent/)
+- [setupChecklistUpdatedEvent](https://apis.io/channels/playerdata/setupchecklistupdatedevent/)
+- [trainingPlanImportEvent](https://apis.io/channels/playerdata/trainingplanimportevent/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [playerdata](https://apis.io/servers/playerdata/playerdata/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Playerdata Authentication](https://apis.io/security/playerdata/playerdata-authentication/)
+- [Playerdata Domain Security](https://apis.io/security/playerdata/playerdata-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.playerdata.com/)
+- [Documentation](https://github.com/PlayerData/playerdatapy/blob/main/docs/auth.md)
+- [Support](https://support.playerdata.com/knowledge)
+- [Blog](https://www.playerdata.com/blog)
+- [Trust centre](https://trust.playerdata.com/)
+- [Privacy policy](https://www.playerdata.com/en-gb/privacy-policy-iframe)
+- [GitHub](https://github.com/PlayerData)
+
+## API Evangelist rating
+
+**Kin Score 36.4** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 51.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 44.6 |
+| Access clarity | 25.0 |
+
+**Agent readiness 17.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | derived (partial credit) |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 25.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/playerdata/](https://apis.io/providers/playerdata/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for PlayerData: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/playerdata/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
